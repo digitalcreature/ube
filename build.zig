@@ -1,8 +1,11 @@
+// "Works on my machine"
 const std = @import("std");
 usingnamespace std.build;
 const buildres = @import("buildres.zig");
 
 fn addDeps(step: *LibExeObjStep) void {
+    // SRC libs
+
     const math: Pkg = .{
         .name = "math",
         .path = "src/math/lib.zig",
@@ -37,7 +40,7 @@ fn addDeps(step: *LibExeObjStep) void {
     const threading: Pkg = .{
         .name = "threading",
         .path = "src/threading/lib.zig",
-        .dependencies = &[_]Pkg{ },
+        .dependencies = &[_]Pkg{},
     };
     const voxel: Pkg = .{
         .name = "voxel",
@@ -60,33 +63,46 @@ fn addDeps(step: *LibExeObjStep) void {
         .dependencies = &[_]Pkg{ math, gl },
     };
 
+    //END SRC libs
+
+    // Non-platform specific library
+
     step.addPackage(math);
     step.addPackage(res);
     step.addPackage(utils);
     step.addPackage(gl);
     step.addPackage(glfw);
     step.addPackage(c);
-    step.addPackage(imgui);
+    step.addPackage(imgui); // h
     step.addPackage(voxel);
     step.addPackage(debughud);
     step.addPackage(camera);
     step.addPackage(threading);
     step.addPackage(mesh);
+    //End Non-platform specific library
 
-    step.addIncludeDir("deps/inc");
-    // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
-    // step.addIncludeDir("C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/include");
-    step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
-    step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
-    // step.addIncludeDir("GLFW/include/GLFW");
-    step.addLibPath("deps/lib");
-    step.linkSystemLibrary("glfw3");
-    step.linkSystemLibrary("user32");
-    step.linkSystemLibrary("gdi32");
-    step.linkSystemLibrary("shell32");
-    step.linkSystemLibrary("opengl32");
-    step.linkSystemLibrary("deps/lib/cimguid");
-    step.linkLibC();
+    // Windows specific libs
+    {
+        step.addIncludeDir("deps/inc");
+        // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
+        // step.addIncludeDir("C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/include");
+        step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
+        step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
+        // step.addIncludeDir("GLFW/include/GLFW");
+
+        step.addLibPath("deps/lib");
+        step.linkSystemLibrary("glfw3");
+        // step.linkSystemLibrary("user32");
+        // step.linkSystemLibrary("gdi32");
+        // step.linkSystemLibrary("shell32");
+        // step.linkSystemLibrary("opengl32");
+        step.linkSystemLibrary("deps/lib/cimguid");
+
+        // END windows specific libs
+
+        // Ew libC use reLibC
+        step.linkLibC();
+    }
 }
 
 pub fn build(b: *Builder) void {
@@ -108,7 +124,7 @@ pub fn build(b: *Builder) void {
     exe.setTarget(target);
     exe.setBuildMode(mode);
     addDeps(exe);
-    // exe.subsystem = .Windows;
+    // exe.subsystem = .Linux;
     exe.install();
 
     // var buildres_step = Step.init(.Custom, "buildres", std.heap.page_allocator, buildResources);
@@ -121,7 +137,6 @@ pub fn build(b: *Builder) void {
     addDeps(file);
 
     test_step.dependOn(&file.step);
-
 
     const run_cmd = exe.run();
     run_cmd.step.dependOn(b.getInstallStep());

@@ -10,7 +10,6 @@ const Volume = @import("volume.zig").Volume;
 const ChunkMesh = @import("mesh.zig").ChunkMesh;
 
 pub const Chunk = struct {
-
     volume: *Volume,
     position: Coords,
     voxels: Voxels,
@@ -34,13 +33,12 @@ pub const Chunk = struct {
         };
     }
 
-    pub fn deinit(self : Self) void {
+    pub fn deinit(self: Self) void {
         self.voxels.deinit();
     }
 
     pub fn coordsAreInBounds(coords: Coords) bool {
-        return
-            (coords.x < width and coords.y < width and coords.z < width) and
+        return (coords.x < width and coords.y < width and coords.z < width) and
             (coords.x >= 0 and coords.y >= 0 and coords.z >= 0);
     }
 
@@ -62,8 +60,7 @@ pub const Chunk = struct {
             if (self.neighbors[0]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x - w, y, z));
             }
-        }
-        else if (x < 0) {
+        } else if (x < 0) {
             if (self.neighbors[3]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x + w, y, z));
             }
@@ -73,8 +70,7 @@ pub const Chunk = struct {
             if (self.neighbors[1]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x, y - w, z));
             }
-        }
-        else if (y < 0) {
+        } else if (y < 0) {
             if (self.neighbors[4]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x, y + w, z));
             }
@@ -84,8 +80,7 @@ pub const Chunk = struct {
             if (self.neighbors[2]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x, y, z - w));
             }
-        }
-        else if (z < 0) {
+        } else if (z < 0) {
             if (self.neighbors[5]) |neighbor| {
                 return neighbor.getNeighborCoords(Coords.init(x, y, z + w));
             }
@@ -93,10 +88,9 @@ pub const Chunk = struct {
         return null;
     }
 
-    pub fn DataArray(comptime T : type) type {
+    pub fn DataArray(comptime T: type) type {
         return struct {
-
-            data : Data = std.mem.zeroes(Data),
+            data: Data = std.mem.zeroes(Data),
 
             pub const Data = [width][width][width]T;
 
@@ -104,34 +98,31 @@ pub const Chunk = struct {
                 return .{};
             }
 
-            fn deinit(self : @This()) void {}
+            fn deinit(self: @This()) void {}
 
-            pub fn get(self : @This(), loc : Coords) T {
+            pub fn get(self: @This(), loc: Coords) T {
                 const pos = coordsToByteCoords(loc);
                 if (std.debug.runtime_safety) {
                     if (loc.x < width and loc.y < width and loc.z < width) {
                         return self.data[pos.x][pos.y][pos.z];
                     }
-                    std.debug.panicExtra(null, null, "local coords {d} are out of bounds for chunks of width {d}", .{loc, width});
-                }
-                else {
+                    std.debug.panicExtra(null, null, "local coords {d} are out of bounds for chunks of width {d}", .{ loc, width });
+                } else {
                     return self.data[pos.x][pos.y][pos.z];
                 }
             }
 
-            pub fn set(self : *@This(), loc : Coords, val : T) void {
+            pub fn set(self: *@This(), loc: Coords, val: T) void {
                 const pos = coordsToByteCoords(loc);
                 if (std.debug.runtime_safety) {
                     if (loc.x < width and loc.y < width and loc.z < width) {
                         self.*.data[pos.x][pos.y][pos.z] = val;
                     }
-                    std.debug.panicExtra(null, null, "local coords {d} are out of bounds for chunks of width {d}", .{loc, width});
-                }
-                else {
+                    std.debug.panicExtra(null, null, "local coords {d} are out of bounds for chunks of width {d}", .{ loc, width });
+                } else {
                     self.*.data[pos.x][pos.y][pos.z] = val;
                 }
             }
-
         };
     }
 };
