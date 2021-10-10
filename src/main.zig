@@ -145,7 +145,7 @@ pub fn main() !void {
     glfw.init();
     defer glfw.deinit();
 
-    var window = glfw.Window.init(1920, 1080, "ube");
+    var window = glfw.Window.init(1920, 1080, "wbe");
     defer window.deinit();
     
     gl.init();

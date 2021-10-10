@@ -1,6 +1,6 @@
 # bark blocks
 
-block game engine built on top of my bark graphical application framework in zig
+windows block game engine built on top of my bark graphical application framework in zig
 
 - zig 0.7.1
 - opengl 4.5

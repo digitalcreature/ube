@@ -104,7 +104,7 @@ pub fn build(b: *Builder) void {
     const mode = b.standardReleaseOptions();
 
     b.installBinFile("deps/lib/glfw3.dll", "glfw3.dll");
-    const exe = b.addExecutable("ube", "src/main.zig");
+    const exe = b.addExecutable("wbe", "src/main.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
     addDeps(exe);
